@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gifthub</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/images/gift-05.png"/>
+    <script src="/js/helper.js"></script>
+
+</head>
+
+<body class="help_background">
+    <div class="menu-div3">
+        <a href="/" style="text-decoration:none">
+            <span class="menu">Home</span>
+        </a>
+    </div>
+
+    <div class="title3" id="ansBody">
+        <div class="animated animatedFadeInUp fadeInUp">
+            <h1 class="animated animatedFadeInUp fadeInUp">You've Been Matched With A Gift Request</h1>
+            <h4 class="animated animatedFadeInUp fadeInUp">Message:</h4>
+            <p id="req-body"></p>
+            <h4 class="animated animatedFadeInUp fadeInUp">Gender:</h4>
+            <p id="req-gender">
+                <p>
+                    <h4 class="animated animatedFadeInUp fadeInUp">Budget:</h4>
+                    <p id="req-budget"></p>
+                    <h4 class="animated animatedFadeInUp fadeInUp">Type of Gift:</h4>
+                    <p id="req-cat"></p>
+                    <div class="form animated animatedFadeInUp fadeInUp"></div>
+                    <br>
+                    <div class="formLabel">Have a gift in mind? Provide a message below</div>
+                    <textarea class="form-control" id="ans-msgInput" rows="3"></textarea>
+                    <div class="formLabel">Link to the gift</div>
+                    <input type="text" id="ans-linkInput" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="http://amazon.com/products/?id=23142">
+
+                    <button class="start_button animated animatedFadeInUp fadeInUp" id="ans-submitBtn">Suggest Gift</button>
+                    <button class="start_button animated animatedFadeInUp fadeInUp" id="ans-refresh">Give Me a Different Match</button>
+
+        </div>
+    </div>
+    <!-- Submission Modal -->
+    <div class="modal fade" id="ansSub" tabindex="-1" role="dialog" aria-labelledby="viewResLab" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewResTi">Answer Recorded!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div>
+                    Thanks for submitting your answer! An email has been sent to the requestee
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="modBtn">Okay!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal if no results found -->
+    <div class="modal fade" id="noResults" tabindex="-1" role="dialog" aria-labelledby="viewResLab" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewResTi">:( Sorry! No Results Found</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div>
+                    We know you're an expert in this category but it doesn't look like anyone needs help with this gift type now.
+                    <br>
+                    <br>
+                    Please choose another category to continue!
+                    <br> (choose all if you have no prefrence)
+                    <select name="cars" id="help-catInput" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Gift Type">
+                        <option value="All">All</option>
+                        <option value="Tech">Tech</option>
+                        <option value="Jewelry">Jewelry</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Outdoors">Outdoors</option>
+                        <option value="Household">Household</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="helpModBtn">Help Someone!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<script>
+     params = window.location.href.split("/")
+    console.log(params)
+    if (params.length === 6) {
+        link = params[5]
+        link = link.split("----")
+        link = link.join("/")
+        console.log(link)
+        $("#ans-linkInput").val(link)
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "Gift Hub",
+  "description": "Suggest Gifts to strangers",
+  "version": "0.7.3",
+  "permissions": [
+    "management",
+    "tabs",
+    "http//localhost/*"
+  ],
+  "browser_action": {
+    "default_icon": "./public/images/gift-05.png",
+    "default_title": "Gift Hub",
+    "default_popup": "./public/popup.html"
+  },
+  "manifest_version": 2
+}

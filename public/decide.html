@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto:300,400,500,700" rel="stylesheet">
+    <script src="/js/decide.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/images/gift-05.png"/>
+    <title>GiftHub</title>
+</head>
+
+<body class="deside_background">
+    <div class="menu-div">
+        <a href="/" style="text-decoration:none">
+            <span class="menu">Home</span>
+        </a>
+    </div>
+    <div class="title2">
+
+
+        <div class="column-1">
+            <h1 class="title-column animated animatedFadeInUp fadeInUp">I need help finding a gift!</h1>
+            <div class="para">
+
+            </div>
+            <a href="ask">
+                <button class="lets_button animated animatedFadeInUp fadeInUp">Lets Go!</button>
+            </a>
+        </div>
+
+        <div class="column-2">
+            <h1 class="title-column animated animatedFadeInUp fadeInUp">I'm a gifting expert!</h1>
+            <div class="para">
+
+            </div>
+            <button id="helpBtn" class="lets_button animated animatedFadeInUp fadeInUp">Let's Go!</button>
+        </div>
+        <div class="modal fade" id="helpCat" tabindex="-1" role="dialog" aria-labelledby="viewResLab" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewResTi">Gift Helper</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div>
+                        Are you an expert in any particular gift category?
+                        <br> (choose all if you have no prefrence)
+                        <select name="cars" id="help-catInput" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Gift Type">
+                            <option value="All">All</option>
+                            <option value="Tech">Tech</option>
+                            <option value="Jewelry">Jewelry</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Outdoors">Outdoors</option>
+                            <option value="Household">Household</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="helpModBtn">Help Someone!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
