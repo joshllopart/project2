@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    ANSWER A GIFT REQUEST SAMPLE PAGE
+    <br>
+    <br>
+    Request: <span id="req-body"></span>
+    <br>
+    Budget: <span id="req-budget"></span>
+    <br>
+    Gender: <span id="req-gender"></span>
+    <br>
+    Gift Category: <span id="req-cat"></span>
+    <br>
+    <br>
+    <br>
+    <form>
+        Your Response:
+        <br>
+        Message:
+        <input id="ans-msgInput" type="text">
+        <br>
+        Link:
+        <input id="ans-linkInput" type="text">
+        <br>
+        <button id="ans-submitBtn">Submit Info</button>
+    </form>
+    <script>
+        var reqId
+        //on answer submit
+        $("#ans-submitBtn").on("click", function(e){
+            e.preventDefault()
+
+            var dataObj = {
+                "res_msg": $("#ans-msgInput").val().trim(),
+                "shop_link": $("#ans-linkInput").val().trim(),
+                "req_id": reqId
+            }
+            console.log(dataObj)
+            $.post("/api/post/answer", dataObj)
+        })
+
+        //on page load
+        category = window.location.href.split("/")[4]
+        $.ajax({
+            method: "GET",
+            url: "/api/get/random/" + category
+        }).then(function(response){
+            console.log(response)
+            $("#req-body").text(response.req_msg)
+            $("#req-budget").text(response.budget)
+            $("#req-gender").text(response.gender)
+            $("#req-cat").text(response.category)
+            reqId = response.id
+        })
+    </script>
+</body>
+
+</html>

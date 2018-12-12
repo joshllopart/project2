@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    SUBMIT A GIFT REQUEST PAGE
+    <form>
+        Email:
+        <input id="req-emailInput" type="text"> Budget:
+        <input id="req-budgetInput" type="text"> Gender:
+        <input id="req-genderInput" type="text"> Category:
+        <input id="req-catInput" type="text"> Message:
+        <input id="req-msgInput" type="text">
+        <button id="req-submitBtn">Submit Info</button>
+    </form>
+    <script>
+        $("#req-submitBtn").on("click", function(e){
+            e.preventDefault()
+
+            var dataObj = {
+                "req_email": $("#req-emailInput").val().trim(),
+                "req_msg": $("#req-msgInput").val().trim(),
+                "budget": $("#req-budgetInput").val().trim(),
+                "gender": $("#req-genderInput").val().trim(),
+                "category": $("#req-catInput").val().trim()
+            }
+            console.log(dataObj)
+            $.post("/api/post/new", dataObj)
+        })
+
+    </script>
+</body>
+
+</html>
