@@ -8,6 +8,6 @@ function handler() {
     var url = tabs[0].url;
     url = url.split("/")
     url = url.join("----")
-   window.open("http://localhost:3000/help/" + document.getElementById("sel1").value + "/" + url, "_blank")
+   window.open("http://www.gifthelp.xyz/help/" + document.getElementById("sel1").value + "/" + url, "_blank")
 })
 }
