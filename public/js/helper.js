@@ -47,13 +47,15 @@ $(document).on("click", "#ans-submitBtn", function (e) {
     }).then(function (response) {
         if (response === "no results") {
             $("#noResults").modal("toggle")
+            return
         }
-        
+
         $("#req-body").text(response.req_msg)
         $("#req-budget").text(response.budget)
         $("#req-gender").text(response.gender)
         $("#req-cat").text(response.category)
         reqId = response.id
+        $("#matchCon").addClass("fadeInUp")
     })
 
 $(document).on("click", "#helpModBtn", function () {

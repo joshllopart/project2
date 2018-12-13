@@ -30,7 +30,7 @@ module.exports = function (app) {
 
  //404
  app.get("*", function(req, res){
-   res.redirect("/")
+  res.sendFile(path.join(__dirname, "../public/404.html"))
  })
 
 };

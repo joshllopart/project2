@@ -23,9 +23,9 @@ module.exports = function (app) {
         }
       }
     }
-    // console.log(queryObj)
+
     db.Requests.findAll(queryObj).then(function (result) {
-      // console.log(result)
+
       requestIndex = Math.floor(Math.random() * result.length)
       try {
       res.json(result[requestIndex].dataValues)
