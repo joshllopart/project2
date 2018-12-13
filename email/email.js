@@ -9,7 +9,7 @@ var emails = {
       HTMLContent = HTMLContent.replace("{{req}}", emailObj.req_msg)
       HTMLContent = HTMLContent.replace("{{answer}}", emailObj.res_msg)
       HTMLContent = HTMLContent.replace("{{link}}", emailObj.shop_link)
-      HTMLContent = HTMLContent.replace(" {{reactivate_link}}", "http://localhost:3000/api/reactivate/" + emailObj.id)
+      HTMLContent = HTMLContent.replace(" {{reactivate_link}}", "http://www.gifthelp.xyz/api/reactivate/" + emailObj.id)
 
       var transporter = nodemailer.createTransport({
         service: 'gmail',
