@@ -11,7 +11,7 @@ module.exports = function (app) {
   //answer page
   app.get("/help/:cat/:link?", function (req, res) {
 
-    catOpts = ['all', 'tech', 'jewerly', 'clothing', 'outdoors', 'household']
+    catOpts = ['all', 'tech', 'jewelry', 'clothing', 'outdoors', 'household']
     console.log(catOpts.indexOf(req.params.cat.toLowerCase()))
     if (catOpts.indexOf(req.params.cat.toLowerCase()) === -1) {
       console.log("rendering 404 page")
