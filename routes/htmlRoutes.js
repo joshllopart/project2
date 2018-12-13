@@ -25,7 +25,7 @@ module.exports = function (app) {
   });
 
   //success page for reactivation from email button
-  app.get("/reopened", function (req, res) {
+  app.get("/success", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/success.html"))
   })
 
