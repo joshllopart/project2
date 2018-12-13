@@ -23,12 +23,23 @@ module.exports = function (app) {
         }
       }
     }
-    // console.log(queryObj)
+
     db.Requests.findAll(queryObj).then(function (result) {
-      // console.log(result)
+
       requestIndex = Math.floor(Math.random() * result.length)
       try {
-      res.json(result[requestIndex].dataValues)
+
+        //avoid returning entire record, only return select info
+        er = result[requestIndex].dataValues
+
+        var returnedObj = {
+          req_msg: er.req_msg,
+          budget: er.budget,
+          gender: er.gender,
+          category: er.category,
+          id: er.id
+        }
+      res.json(returnedObj)
       }
       catch(err) {
          res.json("no results")

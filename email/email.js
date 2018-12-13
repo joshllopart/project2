@@ -1,8 +1,6 @@
 var nodemailer = require('nodemailer');
 var fs = require("fs")
-var keys = require("../keys.js")
-console.log(keys.username)
-console.log(keys.pw)
+
 var emails = {
 
   answer: function (emailObj) {
