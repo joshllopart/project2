@@ -28,7 +28,18 @@ module.exports = function (app) {
 
       requestIndex = Math.floor(Math.random() * result.length)
       try {
-      res.json(result[requestIndex].dataValues)
+
+        //avoid returning entire record, only return select info
+        er = result[requestIndex].dataValues
+
+        var returnedObj = {
+          req_msg: er.req_msg,
+          budget: er.budget,
+          gender: er.gender,
+          category: er.category,
+          id: er.id
+        }
+      res.json(returnedObj)
       }
       catch(err) {
          res.json("no results")
