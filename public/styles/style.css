@@ -36,19 +36,19 @@
 
 #ansBody {
     margin-top: 0;
-    color: black;
+    color: rgb(70, 70 ,70);
 }
 #req-body,
 #req-gender,
 #req-budget,
 #req-cat {
-    color: black;
+    color: rgb(70, 70 ,70);
 }
 .title {
     
-    display: inline-block;
+    display: block;
     margin-right: 0;
-    margin-top: 16%;
+    margin-top: 12%;
     margin-left: 20%;
     float:left;
     
@@ -61,8 +61,8 @@
     display: inline-block;
     margin-right: 0;
     margin-top: 13%;
-    margin-left: 55%;
-    min-width: 40%;
+    margin-left: 50%;
+    min-width: 50%;
     /* float:right; */
     
     
@@ -73,14 +73,21 @@
     display: block;
     margin-left:auto;
     margin-right:auto;
-    margin-top: 13%;
-    max-width: 40%;
+    margin-top: 8%;
+    max-width: 30%;
     min-width: 10%;
     /* float:right; */
     
-    
-
 }
+
+.title-helper  {
+    color: #150A71;
+}
+
+.title-ask {
+    color: #150A71; 
+}
+
 
 h1 {
     pointer-events:none;
@@ -114,6 +121,11 @@ h4 {
     font-size: 27px;
 }
 
+.form_column {
+    margin-top: 20%;
+    
+}
+
 body {
     padding: 40px;
 }
@@ -122,7 +134,7 @@ body {
     max-width: 400px;
     display: block;
     float:left;
-    margin-top:12%;
+    margin-top:8%;
     margin-left:10%;
 }
 
@@ -137,11 +149,17 @@ body {
     margin-left: 55%;
 }
 
+.para-decide {
+    max-width: 80%;
+    margin-left:2%;
+}
+
 p {
     pointer-events:none;
     font-family: 'Roboto', sans-serif;
     font-weight:300; 
-    font-size: 16px; 
+    font-size: 13px; 
+    line-height: 145%;
     color: rgb(161, 161, 161);
 }
 
@@ -155,40 +173,50 @@ p {
 
 .lets_button {
     display:block;
-    margin-left: 22%;
-    background-color: none; /* Green */
+    margin-left: 26%;
+    background-color: white; /* Green */
     
     border: 2px solid #B9BAFF;
     color: #B9BAFF;
-    padding: 15px 32px;
+    padding: 12px 26px;
     text-align: center;
   
     display: inline-block;
-    font-size: 16px;
-    border-radius: 25px;
+    font-size: 13px;
+    border-radius: 90px;
     margin-top: 5%;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
 }
+
+.lets_button {
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .lets_button:hover {
+        background-color: #B9BAFF; /* Green */
+        color: white;
+      }
 
 .start_button {
     /* background-color: none;
     size: 10px;
     stroke: rgb(17, 176, 197); */
-    background-color: none; /* Green */
+    background-color: white; /* Green */
     
     border: 2px solid #47DFF2;
     color: #47DFF2;
-    padding: 15px 32px;
+    padding: 12px 26px;
     text-align: center;
   
     display: inline-block;
-    font-size: 16px;
-    border-radius: 25px;
+    font-size: 13px;
+    border-radius: 90px;
     margin-top: 5%;
     
 }
+
+
 .start_button {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -229,7 +257,7 @@ p {
     color: rgb(95, 95, 95);
     padding: 8px 16px;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 90px;
   }
 
 
