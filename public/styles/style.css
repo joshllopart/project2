@@ -17,18 +17,17 @@
 .deside_background {
     background-image: url("../images/background_deside.jpg");
     background-size: 1680px 865px; 
-    /* background-repeat: no-repeat;
-    image-rendering: -webkit-optimize-contrast;
-    background-size: cover; */
-    /* background-position:50% 50%; */
+    background-size:cover;
+    background-repeat: no-repeat;
     
 }
 
 .help_background {
     background-image: url("../images/Elements_gifts_1680x865-04.jpg");
     background-size: 1680px 865px; 
-    /* background-repeat: no-repeat;
-    image-rendering: -webkit-optimize-contrast;
+    background-repeat: no-repeat;
+    background-size:cover;
+   /* image-rendering: -webkit-optimize-contrast;
     background-size: cover; */
     /* background-position:50% 50%; */
     
