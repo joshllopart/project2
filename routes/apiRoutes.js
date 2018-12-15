@@ -49,30 +49,30 @@ module.exports = function (app) {
 
   //Post call for submitting gift help requests
   app.post("/api/post/new", function (req, res) {
-    db.Requests.create(req.body).then(function (result) {
-      console.log(result)
-      email.conf({
-        "req_msg": req.body.req_msg,
-        "email": req.body.req_email
-      })
-    });
-  });
 
-  //Post call for chrome extenstion links
-  app.post("/api/post/chromeExt", function (req, res) {
-    console.log("It worked")
+    //add request info to table
+    db.Requests.create(req.body).then(function (result) {
+
+      //sent confirmation email to user
+      emailObj = {
+          "req_msg": req.body.req_msg,
+          "email": req.body.req_email
+        }
+
+      email.conf(emailObj)
+    });
   });
 
   //Post call for submitting answers
   app.post("/api/post/answer", function (req, res) {
 
+    //defaults if not an affiliate link
     var affiliate = false
     var newLink = req.body.shop_link
-    link = newLink.split("/")
-
-
+    
     //if amazon link create a new link
-    if (link[2] === "www.amazon.com") {
+    if (newLink.includes("amazon.com")) {
+      link = newLink.split("/")
       dp = link.indexOf("dp")
       ASIN = link[dp + 1]
       newLink = "http://www.amazon.com/dp/" + ASIN + "/?tag=gifthelp03-20"
@@ -151,7 +151,8 @@ module.exports = function (app) {
     //find link parameter
     db.Links.findOne({ where: { id: req.params.id } }).then(function (result) {
 
-     var redirect = result.dataValues.converted_link
+      var redirect = result.dataValues.converted_link
+
       //update click count
       db.Links.update({ visits: result.dataValues.visits + 1 }, { where: { id: req.params.id } }).then(function (result) {
 
